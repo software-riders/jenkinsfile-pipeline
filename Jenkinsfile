@@ -11,7 +11,7 @@ pipeline {
 
             steps {
                 script {
-                    flow = new IntegrationFlow()
+                    flow = new IntegrationFlow(this)
                 }
             }
         }
