@@ -11,19 +11,19 @@ class IntegrationFlow {
     }
 
     def build() {
-        echo 'Building application...'
+        sh 'echo Building application...'
         // myCommands.call("cd spring-boot-projeto")
         // myCommands.call("./gradlew build")
     }
 
     def runTests() {
-        echo 'Running tests...'
+        sh 'echo Running tests...'
         // myCommands.call("cd spring-boot-projeto")
         // myCommands.call("./gradlew test")
     }
 
     def deploy() {
-        echo 'Deploying application...'
+        sh 'echo Deploying application...'
         // myCommands.call("cd spring-boot-projeto")
 
         //  def jarFileName = myCommands.call("ls build/libs/*.jar | tail -1 | xargs -n 1 basename").trim()
