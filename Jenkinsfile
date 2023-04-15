@@ -1,27 +1,34 @@
+@Library('pipeline-library')
+import integration.*
+
 pipeline {
 
     agent any
+
+    environment {
+        flow = new IntegrationFlow()
+    }
 
     stages {
 
         stage("build") {
 
             steps {
-                echo 'building'
+                flow.build()
             }
         }
 
         stage("test") {
 
             steps {
-                echo 'testing'
+                flow.runTests()
             }
         }
 
          stage("deploy") {
 
             steps {
-                echo 'depolying'
+                flow.deploy()
             }
         }
     }
