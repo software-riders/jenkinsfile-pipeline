@@ -14,21 +14,27 @@ pipeline {
         stage("build") {
 
             steps {
-                flow.build()
+                script {
+                    flow.build()
+                }
             }
         }
 
         stage("test") {
 
             steps {
-                flow.runTests()
+                script {
+                    flow.runTests()
+                }
             }
         }
 
          stage("deploy") {
 
             steps {
-                flow.deploy()
+                script {
+                    flow.deploy()
+                }
             }
         }
     }
