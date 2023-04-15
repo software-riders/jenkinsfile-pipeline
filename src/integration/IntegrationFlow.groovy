@@ -1,5 +1,7 @@
 package integration
 
+import integration.utils.Commands
+
 class IntegrationFlow {
 
     def myCommands
