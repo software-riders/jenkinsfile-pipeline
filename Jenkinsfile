@@ -7,11 +7,19 @@ pipeline {
 
     stages {
 
+        stage('prepare') {
+
+            steps {
+                script {
+                    flow = new IntegrationFlow()
+                }
+            }
+        }
+
         stage("build") {
 
             steps {
                 script {
-                    def flow = new IntegrationFlow()
                     flow.build()
                 }
             }
@@ -21,7 +29,6 @@ pipeline {
 
             steps {
                 script {
-                    def flow = new IntegrationFlow()
                     flow.runTests()
                 }
             }
@@ -31,7 +38,6 @@ pipeline {
 
             steps {
                 script {
-                    def flow = new IntegrationFlow()
                     flow.deploy()
                 }
             }
