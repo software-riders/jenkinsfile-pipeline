@@ -5,16 +5,13 @@ pipeline {
 
     agent any
 
-    environment {
-        flow = new IntegrationFlow()
-    }
-
     stages {
 
         stage("build") {
 
             steps {
                 script {
+                    def flow = new IntegrationFlow()
                     flow.build()
                 }
             }
@@ -24,6 +21,7 @@ pipeline {
 
             steps {
                 script {
+                    def flow = new IntegrationFlow()
                     flow.runTests()
                 }
             }
@@ -33,6 +31,7 @@ pipeline {
 
             steps {
                 script {
+                    def flow = new IntegrationFlow()
                     flow.deploy()
                 }
             }
